@@ -1,7 +1,23 @@
 package racinggame;
 
+import racinggame.domain.*;
+import racinggame.view.InputView;
+import racinggame.view.ResultView;
+
 public class Application {
+
     public static void main(String[] args) {
-        // TODO 자동차 경주 게임 구현
+        CarNames carNames = InputView.carNames();
+        TryCount tryCount = InputView.tryCount();
+        Cars cars = CarFactory.from(carNames);
+        RacingGame racingGame = new RacingGame(cars, tryCount);
+
+        System.out.println("실행 결과");
+        while (!racingGame.isEnd()) {
+            racingGame.race(new RandomMoveStrategy());
+            ResultView.show(racingGame.cars());
+        }
+        ResultView.result(racingGame.winners());
     }
+
 }
