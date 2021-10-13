@@ -23,7 +23,7 @@ public class RacingGame {
         attemptCount.decrease();
     }
 
-    public List<Car> winners() {
+    public RaceWinners winners() {
         return cars.winners();
     }
 

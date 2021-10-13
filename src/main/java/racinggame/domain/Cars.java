@@ -20,13 +20,13 @@ public class Cars {
         }
     }
 
-    public List<Car> winners() {
+    public RaceWinners winners() {
         CarPosition maxPosition = findMaxPosition();
         List<Car> winners = new ArrayList<>();
         for (Car car : cars) {
             addCarToWinnersIfCarIsWinner(car, maxPosition, winners);
         }
-        return winners;
+        return new RaceWinners(winners);
     }
 
     private CarPosition findMaxPosition() {

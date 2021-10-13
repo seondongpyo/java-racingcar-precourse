@@ -16,6 +16,11 @@ public class Car {
         this(new CarName(name));
     }
 
+    public Car(String name, int position) {
+        this.name = new CarName(name);
+        this.position = new CarPosition(position);
+    }
+
     public void move(MoveStrategy moveStrategy) {
         if (moveStrategy.isMovable()) {
             position.increase();

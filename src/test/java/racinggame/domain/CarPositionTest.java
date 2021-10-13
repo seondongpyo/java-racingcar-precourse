@@ -23,4 +23,19 @@ class CarPositionTest {
             .isInstanceOf(InvalidCarPositionException.class);
     }
 
+    @DisplayName("자동차 위치 값이 증가한다.")
+    @Test
+    void increase() {
+        CarPosition position = new CarPosition(3);
+        position.increase();
+        assertThat(position.value()).isEqualTo(4);
+    }
+
+    @DisplayName("두 위치 값을 비교하여 가장 먼 위치를 구한다.")
+    @Test
+    void max() {
+        CarPosition position = new CarPosition(3);
+        assertThat(position.max(new CarPosition(5))).isEqualTo(new CarPosition(5));
+    }
+
 }
