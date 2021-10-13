@@ -24,5 +24,4 @@ class CarNameTest {
         assertThatThrownBy(() -> new CarName(name))
             .isInstanceOf(InvalidCarNameLengthException.class);
     }
-
 }

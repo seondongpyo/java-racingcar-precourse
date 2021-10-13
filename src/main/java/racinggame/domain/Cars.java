@@ -46,5 +46,4 @@ public class Cars {
     public List<Car> cars() {
         return Collections.unmodifiableList(cars);
     }
-
 }

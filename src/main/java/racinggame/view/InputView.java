@@ -33,5 +33,4 @@ public class InputView {
             return attemptCount();
         }
     }
-
 }

@@ -21,5 +21,4 @@ class CarsTest {
         RaceWinners winners = cars.winners();
         assertThat(winners.names()).contains("pobi", "crong");
     }
-
 }

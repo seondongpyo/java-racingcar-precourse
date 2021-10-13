@@ -26,5 +26,4 @@ public class CarNames {
     public List<CarName> names() {
         return Collections.unmodifiableList(names);
     }
-
 }

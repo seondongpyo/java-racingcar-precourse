@@ -39,5 +39,4 @@ public class AttemptCount {
     public int value() {
         return value;
     }
-
 }

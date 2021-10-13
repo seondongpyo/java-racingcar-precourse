@@ -22,5 +22,4 @@ class CarTest {
         car.move(() -> false);
         assertThat(car.position()).isEqualTo(new CarPosition());
     }
-
 }

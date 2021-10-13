@@ -36,5 +36,4 @@ public class ResultView {
     public static void showWinners(RaceWinners winners) {
         System.out.printf("최종 우승자는 %s 입니다.", String.join(DELIMITER, winners.names()));
     }
-
 }

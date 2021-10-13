@@ -21,5 +21,4 @@ class CarNamesTest {
         );
         assertThat(carNames.names()).isEqualTo(expectedNames);
     }
-
 }

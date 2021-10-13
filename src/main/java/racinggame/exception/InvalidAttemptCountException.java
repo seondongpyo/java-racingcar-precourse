@@ -7,5 +7,4 @@ public class InvalidAttemptCountException extends RuntimeException {
     public InvalidAttemptCountException(String count) {
         super(String.format(MESSAGE, count));
     }
-
 }

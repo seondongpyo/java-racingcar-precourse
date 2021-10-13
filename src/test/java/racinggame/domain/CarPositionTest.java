@@ -37,5 +37,4 @@ class CarPositionTest {
         CarPosition position = new CarPosition(3);
         assertThat(position.max(new CarPosition(5))).isEqualTo(new CarPosition(5));
     }
-
 }

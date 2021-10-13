@@ -34,5 +34,4 @@ public class RacingGame {
     public List<Car> cars() {
         return cars.cars();
     }
-
 }

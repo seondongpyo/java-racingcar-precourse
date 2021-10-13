@@ -24,5 +24,4 @@ class AttemptCountTest {
         assertThatThrownBy(() -> new AttemptCount(value))
             .isInstanceOf(InvalidAttemptCountException.class);
     }
-
 }

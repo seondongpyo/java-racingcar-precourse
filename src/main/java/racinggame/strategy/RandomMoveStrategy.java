@@ -12,5 +12,4 @@ public class RandomMoveStrategy implements MoveStrategy {
     public boolean isMovable() {
         return Randoms.pickNumberInRange(MIN_NUMBER, MAX_NUMBER) >= MOVABLE_NUMBER;
     }
-
 }
