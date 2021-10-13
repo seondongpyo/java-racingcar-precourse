@@ -19,8 +19,12 @@ public class RacingGame {
             return;
         }
 
-        attemptCount.decrease();
         cars.move(moveStrategy);
+        attemptCount.decrease();
+    }
+
+    public List<Car> winners() {
+        return cars.winners();
     }
 
     public boolean isFinish() {

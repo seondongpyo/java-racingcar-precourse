@@ -22,6 +22,14 @@ public class Car {
         }
     }
 
+    public CarPosition findMaxPositionComparingTo(CarPosition comparingPosition) {
+        return this.position.max(comparingPosition);
+    }
+
+    public boolean isLocatedAt(CarPosition position) {
+        return this.position.equals(position);
+    }
+
     public CarPosition position() {
         return position;
     }
@@ -29,5 +37,4 @@ public class Car {
     public String name() {
         return name.value();
     }
-
 }

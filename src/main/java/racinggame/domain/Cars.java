@@ -20,6 +20,29 @@ public class Cars {
         }
     }
 
+    public List<Car> winners() {
+        CarPosition maxPosition = findMaxPosition();
+        List<Car> winners = new ArrayList<>();
+        for (Car car : cars) {
+            addCarToWinnersIfCarIsWinner(car, maxPosition, winners);
+        }
+        return winners;
+    }
+
+    private CarPosition findMaxPosition() {
+        CarPosition position = new CarPosition();
+        for (Car car : cars) {
+            position = car.findMaxPositionComparingTo(position);
+        }
+        return position;
+    }
+
+    private void addCarToWinnersIfCarIsWinner(Car car, CarPosition maxPosition, List<Car> winners) {
+        if (car.isLocatedAt(maxPosition)) {
+            winners.add(car);
+        }
+    }
+
     public List<Car> cars() {
         return Collections.unmodifiableList(cars);
     }

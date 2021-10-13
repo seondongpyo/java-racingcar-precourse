@@ -2,6 +2,7 @@ package racinggame.view;
 
 import racinggame.domain.Car;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ResultView {
@@ -31,4 +32,11 @@ public class ResultView {
         return builder.toString();
     }
 
+    public static void showWinners(List<Car> winners) {
+        List<String> winnerNames = new ArrayList<>();
+        for (Car winner : winners) {
+            winnerNames.add(winner.name());
+        }
+        System.out.printf("최종 우승자는 %s 입니다.", String.join(",", winnerNames));
+    }
 }

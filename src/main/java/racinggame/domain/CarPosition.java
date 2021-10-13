@@ -25,6 +25,17 @@ public class CarPosition {
         }
     }
 
+    public CarPosition max(CarPosition comparingPosition) {
+        if (isFurtherThan(comparingPosition)) {
+            return this;
+        }
+        return comparingPosition;
+    }
+
+    private boolean isFurtherThan(CarPosition comparingPosition) {
+        return value > comparingPosition.value();
+    }
+
     public void increase() {
         value++;
     }
@@ -45,5 +56,4 @@ public class CarPosition {
     public int hashCode() {
         return Objects.hash(value);
     }
-
 }

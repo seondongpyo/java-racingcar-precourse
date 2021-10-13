@@ -18,6 +18,7 @@ public class Application {
             racingGame.race(new RandomMoveStrategy());
             ResultView.showPosition(racingGame.cars());
         }
+        ResultView.showWinners(racingGame.winners());
     }
 
 }
