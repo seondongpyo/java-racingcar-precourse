@@ -15,4 +15,12 @@ class CarTest {
         assertThat(car.position()).isEqualTo(new CarPosition(1));
     }
 
+    @DisplayName("자동차가 멈추면 위치 값이 증가하지 않는다.")
+    @Test
+    void stop() {
+        Car car = new Car("pobi");
+        car.move(false);
+        assertThat(car.position()).isEqualTo(new CarPosition());
+    }
+
 }
