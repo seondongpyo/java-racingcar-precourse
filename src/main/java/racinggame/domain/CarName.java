@@ -23,6 +23,10 @@ public class CarName {
         }
     }
 
+    public String value() {
+        return value;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -35,5 +39,4 @@ public class CarName {
     public int hashCode() {
         return Objects.hash(value);
     }
-
 }

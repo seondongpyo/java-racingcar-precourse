@@ -14,6 +14,10 @@ public class AttemptCount {
         this.value = Integer.parseInt(value);
     }
 
+    public AttemptCount(int value) {
+        this(String.valueOf(value));
+    }
+
     private void validateAttemptCount(String value) {
         if (isInvalid(value)) {
             throw new InvalidAttemptCountException(value);
@@ -22,6 +26,18 @@ public class AttemptCount {
 
     private boolean isInvalid(String value) {
         return !value.matches(REGEX_FOR_VALID_ATTEMPT_COUNT) || Integer.parseInt(value) == ZERO;
+    }
+
+    public boolean isZero() {
+        return value == ZERO;
+    }
+
+    public void decrease() {
+        value--;
+    }
+
+    public int value() {
+        return value;
     }
 
 }

@@ -7,9 +7,13 @@ public class Car {
     private final CarName name;
     private final CarPosition position;
 
-    public Car(String name) {
-        this.name = new CarName(name);
+    public Car(CarName name) {
+        this.name = new CarName(name.value());
         this.position = new CarPosition();
+    }
+
+    public Car(String name) {
+        this(new CarName(name));
     }
 
     public void move(MoveStrategy moveStrategy) {
