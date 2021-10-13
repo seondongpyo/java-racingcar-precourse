@@ -2,6 +2,8 @@ package racinggame.domain;
 
 import racinggame.exception.InvalidCarPositionException;
 
+import java.util.Objects;
+
 public class CarPosition {
 
     private static final int DEFAULT_POSITION = 0;
@@ -23,8 +25,25 @@ public class CarPosition {
         }
     }
 
+    public void increase() {
+        value++;
+    }
+
     public int value() {
         return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CarPosition position = (CarPosition) o;
+        return value == position.value;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
     }
 
 }
