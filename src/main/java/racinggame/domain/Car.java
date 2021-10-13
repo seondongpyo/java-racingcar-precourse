@@ -1,5 +1,7 @@
 package racinggame.domain;
 
+import racinggame.strategy.MoveStrategy;
+
 public class Car {
 
     private final CarName name;
@@ -10,8 +12,8 @@ public class Car {
         this.position = new CarPosition();
     }
 
-    public void move(boolean isMovable) {
-        if (isMovable) {
+    public void move(MoveStrategy moveStrategy) {
+        if (moveStrategy.isMovable()) {
             position.increase();
         }
     }
