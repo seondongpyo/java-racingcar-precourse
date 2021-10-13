@@ -13,7 +13,12 @@ public class InputView {
     public static CarNames carNames() {
         System.out.println(MESSAGE_INPUT_CAR_NAMES);
         String names = Console.readLine();
-        return CarNames.from(names);
+        try {
+            return CarNames.from(names);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return carNames();
+        }
     }
 
 }
