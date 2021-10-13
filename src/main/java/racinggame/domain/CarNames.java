@@ -10,8 +10,8 @@ public class CarNames {
 
     private final List<CarName> names;
 
-    public CarNames(List<CarName> names) {
-        this.names = names;
+    private CarNames(List<CarName> names) {
+        this.names = new ArrayList<>(names);
     }
 
     public static CarNames from(String carNames) {

@@ -2,16 +2,15 @@ package racinggame.domain;
 
 import racinggame.strategy.MoveStrategy;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RacingGame {
 
-    private final List<Car> cars;
+    private final Cars cars;
     private final AttemptCount attemptCount;
 
-    public RacingGame(List<Car> cars, AttemptCount attemptCount) {
-        this.cars = new ArrayList<>(cars);
+    public RacingGame(Cars cars, AttemptCount attemptCount) {
+        this.cars = cars;
         this.attemptCount = new AttemptCount(attemptCount.value());
     }
 
@@ -21,17 +20,15 @@ public class RacingGame {
         }
 
         attemptCount.decrease();
-        for (Car car : cars) {
-            car.move(moveStrategy);
-        }
+        cars.move(moveStrategy);
     }
 
     public boolean isFinish() {
         return attemptCount.isZero();
     }
 
-    public AttemptCount attemptCount() {
-        return attemptCount;
+    public List<Car> cars() {
+        return cars.cars();
     }
 
 }
